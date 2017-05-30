@@ -1,48 +1,83 @@
 //
 //  main.c
-//  Assignment 1
+//  Assignment 2
 //
-//  Created by Thiago Hissa on 5/23/17.
+//  Created by Thiago Hissa on 2017-05-28.
 //  Copyright © 2017 Thiago Hissa. All rights reserved.
 //
 
 #include <stdio.h>
 
 int main(int argc, const char * argv[]) {
-
-    printf("\n");
-    printf("-----------------------------------\n\n");
     
-    for( int i = 1; i <= 100; i++){
+    char play;
+    int choice;
+    int a = 0;
+    
+    printf("Welcome to Two doors.\n");
+    printf("Would you like to play ? (y/n): ");
+    scanf("%s", &play);
+    
+    if (play == 'y') {
+        
+        do{
+        
+        printf("\nYou are a prisoner in a room with 2 doors and 2 guards.\n");
+        printf("One of the doors will guide you to freedom and behind the other is a hangman --you don't know which is which.\n");
+        printf("One of the guards always tells the truth and the other always lies. You don't know which one is the truth-teller or the liar either.\n");
+        printf("You have to choose and open one of these doors, but you can only ask a single question to one of the guards.\n");
+        printf("What do you ask so you can pick the door to freedom?\n\n");
         
         
+        printf("\t1.Ask the truth-guard to point to the door of doom.\n");
+        printf("\t2.Ask the liar-guard to point to the door of doom.\n");
+        printf("\t3.Doesn't matter which one you pick.\n");
+        scanf("%d", &choice);
         
-        if((i%5==0)&&(i%3==0)){             // Multiple of: 3 AND 5
-            printf("FizzBuzz\n");
+        
+        char *answer = "No matter which one you choose the guards both tell you which door leads to death, and therefore you can pick the other door.\n";
+        switch (choice) {
+            case 1:
+                printf("\n");
+                printf("%s\n", answer);
+                break;
+            case 2:
+                printf("\n");
+                printf("%s\n", answer);
+                break;
+            case 3:
+                printf("\n");
+                printf("%s\n", answer);
+                break;
+            default:
+                break;
         }
         
-        else if(i%3==0){                    // Multiple of: 3
-            printf("Fizz\n");
-        }
+        printf("Would you like to play again ? (y/n): ");
+        scanf("%s", &play);
+        } while(play == 'y');
         
-        else if(i%5==0){                    // Multiple of: 5
-            printf("Buzz\n");
-        }
-        
-        else{                               // Other
-            printf("%d\n",i);
-        }
-        
-        
-        
-    }    // For loop ends
-    
-    printf("\n");
-    printf("-----------------------------------\n");
+    }
     
     
-    return 0;
+    
+    
+    if (play == 'n'){
+        printf("\n");
+        printf("Thanks for playing! Goodbye\n");
+        printf("\n");
+    }
+    
+    
+    
+    else{
+        a = 1;
+        printf("\n");
+        printf("Incorrect input. The program will end with code 1 \n");
+        printf("\n");
+    }
+    
+    
+    
+    return a;
 }
-
-
-
