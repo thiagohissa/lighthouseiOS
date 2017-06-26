@@ -63,7 +63,47 @@ int main(int argc, const char * argv[]) {
     
     
     
+     // Canadianize
     
+    NSString *canadianString = [inputString stringByAppendingString:@" eh ?"];
+    NSLog(@"Canadianize : %@", canadianString);
+    
+    // Canadianize end
+    
+    
+    
+    
+    
+    // Respond
+    
+    NSString *respondString = [inputString substringFromIndex: [inputString length]-1];
+    
+    if([respondString isEqualToString:@"?"]){
+        NSLog(@"I don't know");
+    }
+    
+    if([respondString isEqualToString:@"!"]){
+        NSLog(@"Whoa, calm down!");
+    }
+    
+    
+    // Respond end
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    // De-Space-It
+    
+    NSString *noSpaceString = [inputString stringByReplacingOccurrencesOfString:@" " withString:@"-"];
+    NSLog(@"De-Space-It : %@", noSpaceString);
+    
+    // De-Space-It end
     
     
     
